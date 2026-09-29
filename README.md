@@ -4,6 +4,17 @@ PhyloAtlas 是一個原生 macOS 桌面 App，用來把 phylogeny tree 與樣本
 
 它不需要 Docker、Python、NAS server 或其他背景服務。Tree、照片與設定都在本機處理，適合需要反覆比較親緣關係與樣本形態的研究工作。
 
+## 介面與檔案配置
+
+PhyloAtlas 的主要畫面分成左右兩個 panel：
+
+- 左側是 **Tree panel**，用來開啟與查看 phylogeny tree。
+- 右側是 **Photo panel**，用來開啟照片資料夾，以及查看與 tree node 對應的照片。
+
+Tree 檔案與照片資料夾可以分別位於不同位置。使用者可以先在左側開啟 Tree，再在右側開啟照片資料夾，兩者會依照 node 與資料夾的 matching 規則建立對應。
+
+為了方便管理，建議將 Tree 檔案與對應的照片資料夾放在同一個資料夾中。這樣開啟右側的「照片資料夾」時，PhyloAtlas 會自動尋找並載入同一位置的 Tree 與照片資料夾；如果同一位置有多個 Tree，會先讓使用者選擇要開啟的 Tree。
+
 ![PhyloAtlas 初始畫面](docs/images/phyloatlas-empty.png)
 
 ## 為什麼開發 PhyloAtlas
@@ -75,12 +86,25 @@ PhyloAtlas 不限於珊瑚。只要有照片、phylogeny tree，以及適當的 
 
 ## 使用流程
 
-1. 按「載入 Phylogeny Tree」，選擇 tree 檔案。
-2. 按右側「照片資料夾」，選擇照片根目錄。
+### 分開選擇 Tree 與照片資料夾
+
+1. 在左側 Tree panel 按「載入 Phylogeny Tree」，選擇 `.tree`、`.treefile`、`.nex` 或 `.nexus` 檔案。
+2. 在右側 Photo panel 按「開啟照片資料夾」，選擇照片根目錄。
 3. 確認「設定 → 照片資料夾」中的 node 與資料夾 matching 規則。
-4. 點選 Tree 中的 node 或 clade，查看相對應的照片。
-5. 如有缺少的資料夾，可從「設定 → 節點選取」按下建立 tree node 資料夾。
-6. 在照片中勾選代表照，再選取其他 node 進行比較。
+
+### Tree 與照片放在同一個資料夾
+
+1. 將 Tree 檔案與照片資料夾放在同一個資料夾中。
+2. 在右側 Photo panel 按「開啟照片資料夾」。
+3. PhyloAtlas 會自動載入照片資料夾，並尋找同一位置的 Tree。
+4. 如果找到多個 Tree，先選擇要開啟的 Tree。
+5. 確認「設定 → 照片資料夾」中的 node 與資料夾 matching 規則。
+
+完成上述其中一種開啟方式後：
+
+1. 點選 Tree 中的 node 或 clade，查看相對應的照片。
+2. 如有缺少的資料夾，可從「設定 → 節點選取」按下建立 tree node 資料夾。
+3. 在照片中勾選代表照，再選取其他 node 進行比較。
 
 ## 設定面板簡介
 
