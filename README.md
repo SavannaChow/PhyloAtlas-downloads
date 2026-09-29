@@ -28,13 +28,14 @@ PhyloAtlas 不限於珊瑚。只要有照片、phylogeny tree，以及適當的 
 
 1. 開啟下載的 `.dmg`。
 2. 將 `PhyloAtlas.app` 拖曳到右側的 `Applications` 資料夾捷徑。
-3. 雙擊 DMG 裡的 `Open Terminal.app`。
-4. 將下方指令複製到 Terminal，按下 Enter。
-5. 從 Applications 開啟 PhyloAtlas。
+3. 雙擊 DMG 第二區的 `Copy xattr command.pdf`。
+4. 用滑鼠選取指令並按 `⌘C` 複製。
+5. 雙擊 `Open Terminal.app`，貼上指令並按下 Enter。
+6. 從 Applications 開啟 PhyloAtlas。
 
 ## 如果 macOS 阻擋啟動
 
-目前版本尚未使用 Apple Developer ID 簽署與 notarization。請先將 App 拖到 Applications，再開啟 DMG 裡的 `Open Terminal.app`，貼上：
+目前版本尚未使用 Apple Developer ID 簽署與 notarization。請先將 App 拖到 Applications，再開啟 DMG 裡的 `Copy xattr command.pdf`，選取並複製指令，然後開啟 `Open Terminal.app` 貼上：
 
 ```bash
 xattr -dr com.apple.quarantine "/Applications/PhyloAtlas.app"
